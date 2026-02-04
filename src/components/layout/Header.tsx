@@ -29,11 +29,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/95 backdrop-blur-sm shadow-soft"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container-wide">
         <nav className="flex items-center justify-between h-16 md:h-20">
@@ -45,7 +44,7 @@ export function Header() {
             <span className="text-base md:text-lg font-semibold text-foreground">
               {SITE_CONFIG.name.split(" – ")[0]}
             </span>
-            <span className="text-xs md:text-sm text-muted-foreground">
+            <span className="text-xs md:text-sm text-black">
               {SITE_CONFIG.doctor}
             </span>
           </Link>
@@ -56,16 +55,15 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.href
+                className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === link.href
                     ? "text-primary"
                     : "text-muted-foreground"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
             ))}
-            
+
             <a
               href={`tel:${SITE_CONFIG.phone}`}
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
@@ -97,16 +95,15 @@ export function Header() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`block px-4 py-3 text-base font-medium transition-colors ${
-                    location.pathname === link.href
+                  className={`block px-4 py-3 text-base font-medium transition-colors ${location.pathname === link.href
                       ? "text-primary bg-secondary"
                       : "text-foreground hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              
+
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
                 className="flex items-center gap-2 mx-4 mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-xl text-base font-medium justify-center"
